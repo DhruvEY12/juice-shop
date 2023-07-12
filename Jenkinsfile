@@ -16,5 +16,12 @@ pipeline {
           sh 'semgrep ci'
       }
     }
+    stage('Grype - Build')
+    {
+      steps
+      {
+        grypeScan scanDest: 'dir:/tmp', repName: 'myScanResult.txt'
+      }
+    }
   }
 }
