@@ -11,7 +11,7 @@ pipeline
     {
       steps
       {
-        grypeScan scanDest: 'dir:/tmp', repName: 'myScanResult.txt'
+        grypeScan scanDest: 'dir:/tmp', repName: 'myScanResult.txt', autoInstall : 1
       }
     }
   }
