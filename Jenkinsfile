@@ -16,7 +16,7 @@ pipeline {
           sh 'semgrep ci'
       }
     }
-    stage('Grype - Build')
+    stage('Grype-Build')
     {
       steps
       {
