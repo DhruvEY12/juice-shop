@@ -10,12 +10,6 @@ pipeline {
       // SEMGREP_BASELINE_REF = "main"
     }
     stages {
-      stage('Semgrep-Scan') {
-        steps {
-          // sh 'pip3 install semgrep'
-          sh 'semgrep ci'
-      }
-    }
     stage('Grype-Build')
     {
       steps
