@@ -11,7 +11,8 @@ pipeline
     {
       steps
       {
-        grypeScan scanDest: 'dir:/tmp', repName: 'myScanResult.txt', autoInstall : 1
+        sh 'grype dir:. --scope AllLayers'
+        // grypeScan scanDest: 'dir:/tmp', repName: 'myScanResult.txt', autoInstall : 1
       }
     }
   }
