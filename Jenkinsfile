@@ -16,13 +16,5 @@ pipeline {
           sh 'semgrep ci'
       }
     }
-    stage('Grype-Build')
-    {
-      steps
-      {
-        sh 'grype dir:. --scope AllLayers'
-        // grypeScan scanDest: 'dir:/tmp', repName: 'myScanResult.txt', autoInstall: 1
-      }
-    }
   }
 }
