@@ -19,7 +19,7 @@ pipeline {
     }
       stage('Scan') {
         steps {
-          sh 'grype dir:/var/lib/jenkins/workspace/Semgrep-Scan -o json --scope AllLayers'
+          sh 'grype dir:/var/lib/jenkins/workspace/Combine_1 -o json --scope AllLayers'
       }
     }
   }
