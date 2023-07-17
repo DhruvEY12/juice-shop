@@ -14,7 +14,7 @@ pipeline {
         steps {
           // sh 'pip3 install semgrep'
           // sh 'semgrep ci'
-          semgrep scan --config auto --json
+          sh semgrep scan --config auto --json
       }
     }
   }
