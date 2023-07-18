@@ -17,9 +17,14 @@ pipeline {
           sh 'semgrep scan --config auto --json'
       }
     }
-      stage('Scan') {
+      stage('Grype-Scan') {
         steps {
           sh 'grype dir:/var/lib/jenkins/workspace/Combine_1 -o json --scope AllLayers'
+      }
+    }
+      stage('ZAP-Scan') {
+        steps {
+          sh '/usr/share/owasp-zap/zap.sh -port 6969 -cmd -quickurl https://demo.testfire.net -quickprogress -quickout /tmp/zap_scan_on_jenkins_${BUILD_ID}.html'
       }
     }
   }
