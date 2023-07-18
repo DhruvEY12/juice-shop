@@ -19,7 +19,7 @@ pipeline {
     }
       stage('Grype-Scan') {
         steps {
-          sh 'grype dir:/var/lib/jenkins/workspace/Combine_1 -o json --scope AllLayers'
+          sh 'grype dir:/var/lib/jenkins/workspace/Trial_1 -o json --scope AllLayers'
       }
     }
       stage('ZAP-Scan') {
