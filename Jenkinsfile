@@ -12,8 +12,6 @@ pipeline {
     stages {
       stage('Semgrep-Scan') {
         steps {
-          // sh 'pip3 install semgrep'
-          // sh 'semgrep ci'
           sh 'semgrep scan --config auto'
       }
     }
