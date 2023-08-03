@@ -17,10 +17,5 @@ pipeline {
           sh 'semgrep scan --config auto --json'
       }
     }
-      stage('Scan') {
-        steps {
-          sh 'grype dir:/var/lib/jenkins/workspace/Combine_1 -o json --scope AllLayers'
-      }
-    }
   }
 }
