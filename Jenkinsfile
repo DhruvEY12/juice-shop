@@ -13,7 +13,7 @@ pipeline {
       stage('Semgrep-Scan') {
         steps {
           sh 'whoami'
-          sh 'semgrep scan --config auto'
+          sh 'semgrep scan --config auto --output scan_results.json --json'
       }
     }
       stage('Scan') {
