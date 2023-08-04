@@ -12,6 +12,7 @@ pipeline {
     stages {
       stage('Semgrep-Scan') {
         steps {
+          sh 'whoami'
           sh 'semgrep scan --config auto'
       }
     }
