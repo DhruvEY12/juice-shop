@@ -49,7 +49,7 @@ pipeline {
       }
     }
 
-      stage('Semgrep_result-to-DefectDojo'){
+      stage('Grype_result-to-DefectDojo'){
         steps {
           sh '''
           curl -k -X 'POST' \
