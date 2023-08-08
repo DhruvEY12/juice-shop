@@ -30,7 +30,7 @@ pipeline {
           -F 'do_not_reactivate=false' \
           -F 'verified=true' \
           -F 'close_old_findings=true' \
-          -F 'engagement_name=Semgrep-Scan' \
+          -F 'engagement_name=' \
           -F 'push_to_jira=false' \
           -F 'minimum_severity=Info' \
           -F 'close_old_findings_product_scope=false' \
@@ -62,7 +62,7 @@ pipeline {
           -F 'do_not_reactivate=false' \
           -F 'verified=true' \
           -F 'close_old_findings=true' \
-          -F 'engagement_name=Grype-scan' \
+          -F 'engagement_name=' \
           -F 'push_to_jira=false' \
           -F 'minimum_severity=Info' \
           -F 'close_old_findings_product_scope=false' \
