@@ -26,38 +26,20 @@ pipeline {
           -H 'Authorization: Token 212983a2789afcd09f252a66d83b46a8fa4a8c39' \
           -H 'Content-Type: multipart/form-data' \
           -H 'X-CSRFTOKEN: agVi7AHZPZ13PBfCOABb4yn6v12KIUNoLvf34b9vNHS0X2qig1Exvd6J0Nnkw7YO' \
-          -F 'product_type_name=' \
           -F 'active=true' \
           -F 'do_not_reactivate=false' \
-          -F 'endpoint_to_add=' \
           -F 'verified=true' \
           -F 'close_old_findings=true' \
-          -F 'test_title=' \
           -F 'engagement_name=Semgrep-Scan' \
-          -F 'build_id=' \
-          -F 'deduplication_on_engagement=' \
           -F 'push_to_jira=false' \
           -F 'minimum_severity=Info' \
           -F 'close_old_findings_product_scope=false' \
-          -F 'scan_date=' \
           -F 'create_finding_groups_for_all_findings=true' \
-          -F 'engagement_end_date=' \
-          -F 'test=' \
-          -F 'environment=' \
-          -F 'service=' \
-          -F 'commit_hash=' \
-          -F 'group_by=' \
-          -F 'version=' \
           -F 'tags=semgrep' \
-          -F 'api_scan_configuration=' \
           -F 'product_name=Product-II' \
           -F 'file=@scan_results.json;type=application/json' \
           -F 'auto_create_context=true' \
-          -F 'lead=' \
           -F 'scan_type=Semgrep JSON Report' \
-          -F 'branch_tag=' \
-          -F 'source_code_management_uri='
-          
           '''
         }
       }
