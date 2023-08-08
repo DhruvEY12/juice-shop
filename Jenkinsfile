@@ -20,7 +20,7 @@ pipeline {
       stage('Semgrep-DefectDojo'){
         steps {
           sh '''
-          curl -k -X 'POST' \
+          curl -X 'POST' \
           'https://defectdojo.dalmiabharat.com/api/v2/reimport-scan/' \
           -H 'accept: application/json' \
           -H 'Authorization: Token 212983a2789afcd09f252a66d83b46a8fa4a8c39' \
