@@ -12,6 +12,13 @@ pipeline {
     stages {
       stage('DAST-Scanning') {
             parallel {
+                stage('ZAP') {
+                    steps {
+                        sh '/usr/share/owasp-zap/zap.sh -port 6969 -cmd -quickurl https://demo.testfire.net -quickprogress -quickout /tmp/zap_scan_on_jenkins.xml'
+                        // Add commands to run integration tests
+                    }
+                }
+
                 stage('PD-Nuclei') {
                     steps {
                         sh '''
@@ -20,12 +27,7 @@ pipeline {
                         '''   
                     }
                 }
-                stage('ZAP') {
-                    steps {
-                        sh '/usr/share/owasp-zap/zap.sh -port 6969 -cmd -quickurl https://demo.testfire.net -quickprogress -quickout /tmp/zap_scan_on_jenkins.xml'
-                        // Add commands to run integration tests
-                    }
-                }
+              
             }
         }
      
