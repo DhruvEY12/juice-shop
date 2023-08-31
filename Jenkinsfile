@@ -10,25 +10,28 @@ pipeline {
       // SEMGREP_BASELINE_REF = "main"
     //}
     stages {
-      stage('Semgrep-Scan') {
-        steps {
-          sh '''
-          pwd
-          ls -lrtha
-          source /home/jenkins/venv1/bin/activate 
-          semgrep scan --config auto
-          deactivate
-          '''   
-      }
-    }
-      
+      stage('SAST-Scanning') {
+            parallel {
+                stage('Semgrep') {
+                    steps {
+                        sh '''
+                        pwd
+                        ls -lrtha
+                        source /home/jenkins/venv1/bin/activate 
+                        semgrep scan --config auto
+                        deactivate
+                        '''   
+                    }
+                }
+                stage('Grype') {
+                    steps {
+                        sh 'grype dir:. -o json --file grype_result.json --scope AllLayers'
+                        // Add commands to run integration tests
+                    }
+                }
+            }
+        }
      
-      stage('Grype-Scan') {
-        steps {
-          sh 'grype dir:. -o json --file grype_result.json --scope AllLayers'
-      }
-    }
-
       
   }
 }
