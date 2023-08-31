@@ -30,6 +30,29 @@ pipeline {
               
             }
         }
+      stage('SAST-Scanning') {
+            parallel {
+                stage('semgrep') {
+                    steps {
+                       sh '''
+                       pwd
+                       ls -lrtha
+                       source /home/jenkins/venv1/bin/activate 
+                       semgrep scan --config auto
+                       deactivate
+                       '''   
+                    }
+                }
+
+                stage('Grype') {
+                    steps {
+                        sh 'grype dir:. -o json --file grype_result.json --scope AllLayers'
+            
+                    }
+                }
+              
+            }
+        }
      
       
   }
