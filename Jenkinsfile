@@ -16,7 +16,7 @@ pipeline {
                     steps {
                         sh '''
                         source ~/.bashrc
-                        nuclei -u https://demo.testfire.net/ -o Nucleiscanresult.json -j -nc
+                        nuclei -u https://demo.testfire.net/ -nc
                         '''   
                     }
                 }
