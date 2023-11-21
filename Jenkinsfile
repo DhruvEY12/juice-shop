@@ -42,7 +42,7 @@ pipeline {
                         -H 'accept: application/json' \
                         -H 'Authorization: Token ${DefectDojo-Authorization}' \
                         -H 'Content-Type: multipart/form-data' \
-                        -H 'X-CSRFTOKEN: ${DefectDojo X-CSRFTOKEN}' \
+                        -H 'X-CSRFTOKEN: ${DefectDojoX-CSRFTOKEN}' \
                         -F 'active=true' \
                         -F 'do_not_reactivate=false' \
                         -F 'verified=true' \
