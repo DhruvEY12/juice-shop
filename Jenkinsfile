@@ -37,12 +37,13 @@ pipeline {
       stage('Semgrep_result-to-DefectDojo'){
         steps {
           script {
+                      env.TESTCREDS = credentials('DefectDojo-CSRFToken')
                        sh "curl -X 'POST' \
                         'https://defectdojo.dalmiabharat.com/api/v2/reimport-scan/' \
                         -H 'accept: application/json' \
-                        -H 'Authorization: Token ${DefectDojo-Authorization}' \
+                        -H 'Authorization: Token 212983a2789afcd09f252a66d83b46a8fa4a8c39' \
                         -H 'Content-Type: multipart/form-data' \
-                        -H 'X-CSRFTOKEN: ${DefectDojo-CSRFToken}' \
+                        -H 'X-CSRFTOKEN: ${TESTCREDS}' \
                         -F 'active=true' \
                         -F 'do_not_reactivate=false' \
                         -F 'verified=true' \
