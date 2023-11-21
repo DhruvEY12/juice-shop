@@ -40,9 +40,9 @@ pipeline {
                        sh "curl -X 'POST' \
                         'https://defectdojo.dalmiabharat.com/api/v2/reimport-scan/' \
                         -H 'accept: application/json' \
-                        -H 'Authorization: Token 212983a2789afcd09f252a66d83b46a8fa4a8c39' \
+                        -H 'Authorization: Token ${DefectDojo-Authorization}' \
                         -H 'Content-Type: multipart/form-data' \
-                        -H 'X-CSRFTOKEN: agVi7AHZPZ13PBfCOABb4yn6v12KIUNoLvf34b9vNHS0X2qig1Exvd6J0Nnkw7YO' \
+                        -H 'X-CSRFTOKEN: ${DefectDojo X-CSRFTOKEN}' \
                         -F 'active=true' \
                         -F 'do_not_reactivate=false' \
                         -F 'verified=true' \
