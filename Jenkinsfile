@@ -17,7 +17,7 @@ pipeline {
                   steps {
                     script {
                       try {
-                        bat label: '', script: 'java -Xmx512m -jar "C:/Program Files/OWASP/Zed Attack Proxy/zap-2.13.0.jar" -cmd -port 8084 -autorun "D:/API/Suvidha/AutoTwo.yaml"'
+                        bat label: '', script: 'java -Xmx512m -jar "C:/Program Files/OWASP/Zed Attack Proxy/zap-2.13.0.jar" -cmd -port 8084 -autorun "D:/API/Suvidha/AutoThree.yaml"'
                     } catch (Exception e) {
                         // Catch any exceptions and ignore them to prevent pipeline failure
                         currentBuild.result = 'SUCCESS'
