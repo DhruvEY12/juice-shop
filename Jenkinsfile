@@ -38,11 +38,10 @@ pipeline {
         steps {
           script {
                       env.TESTCREDS = credentials('DefectDojo-CSRFToken')
-                      env.TESTAUTH = credentials('DefectDojo-Authorization')
                        sh "curl -X 'POST' \
                         'https://defectdojo.dalmiabharat.com/api/v2/reimport-scan/' \
                         -H 'accept: application/json' \
-                        -H 'Authorization: Token ${TESTAUTH}' \
+                        -H 'Authorization: Token 212983a2789afcd09f252a66d83b46a8fa4a8c39' \
                         -H 'Content-Type: multipart/form-data' \
                         -H 'X-CSRFTOKEN: ${TESTCREDS}' \
                         -F 'active=true' \
