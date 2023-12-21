@@ -16,14 +16,8 @@ pipeline {
                     label 'windows-worker' // Specify the label of your Windows agent node
                     }
                   steps {
-                    script {
-                      try {
+                    script { 
                         bat label: '', script: '"D:/apache-jmeter-5.6.2/apache-jmeter-5.6.2/bin/jmeter" -n -t "D:/apache-jmeter-5.6.2/apache-jmeter-5.6.2/bin/Loadtest/SDMS.jmx" -l "D:/apache-jmeter-5.6.2/apache-jmeter-5.6.2/bin/Loadtest/report.csv"'
-                    } catch (Exception e) {
-                        // Catch any exceptions and ignore them to prevent pipeline failure
-                        currentBuild.result = 'SUCCESS'
-                        echo "ZAP Command encountered an error, but it's being ignored."
-                    }
                 }
             }
         }
