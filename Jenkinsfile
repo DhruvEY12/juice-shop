@@ -17,7 +17,7 @@ pipeline {
                     }
                   steps {
                     script { 
-                        bat label: '', script: '"D:/apache-jmeter-5.6.2/apache-jmeter-5.6.2/bin/jmeter" -n -t "D:/apache-jmeter-5.6.2/apache-jmeter-5.6.2/bin/Loadtest/SDMS.jmx" -l "D:/apache-jmeter-5.6.2/apache-jmeter-5.6.2/bin/Loadtest/report.csv"'
+                        bat label: '', script: '"D:/apache-jmeter-5.6.2/apache-jmeter-5.6.2/bin/jmeter" -n -t "D:/apache-jmeter-5.6.2/apache-jmeter-5.6.2/bin/Loadtest/SDMS.jmx" -l "D:/Jenkins/workspace/SDMS_Web_Pipeline/JmeterReport.csv"'
                 }
             }
         }
