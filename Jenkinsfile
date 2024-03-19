@@ -16,8 +16,6 @@ pipeline {
         steps{
            sh '''
               node -v
-              npm ci
-              npm install -g @angular/cli@14.1.3
               '''      
         }
       }
