@@ -11,9 +11,13 @@ pipeline {
       // SEMGREP_BASELINE_REF = "main"
     //}
     stages {
+      
       stage('node version') {
+        steps{
         sh 'node -v'
+        }
       }
+      
       stage('SAST-Scanning') {
             parallel {
                 stage('semgrep') {
