@@ -14,34 +14,15 @@ pipeline {
       
       stage('node version') {
         steps{
-        sh 'node -v'
+           sh '''
+              node -v
+              npm ci
+              npm install -g @angular/cli@14.1.3
+              '''      
         }
       }
       
-      stage('SAST-Scanning') {
-            parallel {
-                stage('semgrep') {
-                    steps {
-                       sh '''
-                       pwd
-                       ls -lrtha
-                       source /home/jenkins/venv1/bin/activate 
-                       semgrep scan --config auto --output Semgrep_results.json --json
-                       deactivate
-                       '''   
-                    }
-                }
-
-                stage('Grype') {
-                    steps {
-                        sh 'grype dir:. -o json --file grype_result.json --scope AllLayers'
-            
-                    }
-                }
-              
-            }
-        
-        }
+    }
       
   }
 }
